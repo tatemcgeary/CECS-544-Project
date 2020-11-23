@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google" value="notranslate">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link href=" https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.11/combined/css/gijgo.min.css " rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Tiger's Bughound</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p style="color:#FDD023"> Countdown: LSU VS Alabama</p>
+                <p id="countdown" style="color:#FDD023"></p>
+                <li>
+                    <a href="dashboard.html">Create Bug Report</a>
+                </li>
+                <li>
+                    <a href="1_list_search_bug.html">List/Search Bug's/View bug report </a>
+                </li>
+                <li>
+                    <a href="3_add_employee.html">Add Employee</a>
+                </li>
+                <li>
+                    <a href="4_list_edit_employee.html">Edit Employee</a>
+                </li>
+                <li>
+                    <a href="5_add_program.html">Add Program</a>
+                </li>
+                <li>
+                    <a href="6_list_programs.html">Delete Program/list and </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="line"></div>
+
+            <div>
+                <img class="rounded mx-auto d-block" height="200" src="images/lsu_tigers.png" alt="lsu tigers">
+            </div>
+            <div>
+                <h2 class="row h-100 justify-content-center align-items-center" style="padding-top: 1em; color:#461D7C">Tiger's
+                    Bughound: Create Bug</h2>
+            </div>
+            <div class="line"></div>
+
+            <form class="form-row mt-4" id="form-data" role="form" method="POST" data-type="create-bug-report">
+
+                <div class="col-sm-4 pb-3">
+                    <label for="program-name">Program</label>
+                    <select class="form-control" id="program-name" name="program-name" required>
+                        <option disabled selected>Select A Program</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4 pb-3">
+                    <label for="report-type">Report Type</label>
+                    <select class="form-control" id="report-type" name="report-type" required>
+                        <option disabled selected>Report Type</option>
+                        <option value="0">Coding Error</option>
+                        <option value="1">Design Issue</option>
+                        <option value="2">Suggestion</option>
+                        <option value="3">Documentation</option>
+                        <option value="4">Hardware</option>
+                        <option value="5">Query</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4 pb-3">
+                    <label for="version">Version</label>
+                    <select class="form-control" id="version" name="version" required>
+                        <option disabled selected>Pick A Version</option>
+                        <option value="version 1">Version 1</option>
+                        <option value="version2">Version 2</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4 pb-3">
+                    <label for="severity">Severity</label>
+                    <select class="form-control" id="severity" name="severity" required>
+                        <option disabled selected>Pick A Severity Status</option>
+                        <option value="0">Trivial</option>
+                        <option value="1">Minor</option>
+                        <option value="2">Major</option>
+                        <option value="3">Critical</option>
+                    </select>
+                </div>
+
+
+                <div class="col-sm-4 pb-3">
+                    <label for="problem-summary">Problem Summary</label>
+                    <input type="text" class="form-control" id="problem-summary" name="problem-summary" required>
+                </div>
+
+                <div class="col-sm-4 pb-3">
+                    <label for="reproducable">Reproducable</label>
+                    <select class="form-control" id="reproducable" name="reproducable" required> 
+                        <option disabled selected>Pick A Status</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+
+                <div class="col-md-12 pb-3">
+                    <label for="problem-statement">Problem</label>
+                    <textarea class="form-control" id="problem-statement" name="problem-statement" rows="5" cols="5" required></textarea>
+                    <small class="text-info">
+                        Explain in detail here.
+                    </small>
+                </div>
+
+                <div class="col-md-12 pb-3">
+                    <label for="suggested-fix">Suggested Fix</label>
+                    <textarea class="form-control" id="suggested-fix" name="suggested-fix" rows="5" cols="5" required></textarea>
+                    <small class="text-info">
+                        Explain in detail here.
+                    </small>
+                </div>
+
+                <div class="col-sm-4 pb-3">
+
+                    <label for="attachment">Choose file</label>
+                    <input type="file" class="form-control-file" id="attachment" name="attachment" multiple>
+
+                </div>
+
+                <div class="col-sm-4 pb-3">
+                    <label for="reported-by">Reported By</label>
+                    <select class="form-control" id="reported-by" name="reported-by" required>
+                        <option disabled selected>Choose Employee</option>
+                        <option value="0">Tate</option>
+                        <option value="1">Zack</option>
+                        <option value="2">Eduardo</option>
+                        <option value="3">Dr.Hoffman</option>
+                    </select>
+                </div>
+
+                <!---------------------------------------For Admin Only-------------------------------------------------->
+                <div class="line"></div>
+                <div class="col-sm-6 pb-3">
+                    <label for="functional-area">Functional Area</label>
+                    <select class="form-control" id="functional-area" name="functional-area" required>
+                        <option disabled selected>Area</option>
+                        <option value="0">Tate</option>
+                        <option value="1">Zack</option>
+                    </select>
+                </div>
+                <div class="col-sm-6 pb-3">
+                    <label for="assigned-employee">Assigned To</label>
+                    <select class="form-control" id="assigned-employee" name="assigned-employee" required>
+                        <option disabled selected>Choose Employee</option>
+                        <option value="0">Tate</option>
+                        <option value="1">Zack</option>
+                        <option value="2">Eduardo</option>
+                        <option value="3">Dr.Hoffman</option>
+                    </select>
+                </div>
+
+
+                <div class="col-md-12 pb-3">
+                    <label for="comments">Comments</label>
+                    <textarea class="form-control" id="comments" name="comments" rows="5" cols="5" required></textarea>
+                    <small class="text-info">
+                        Explain in detail here.
+                    </small>
+                </div>
+
+                <div class="col-sm-4 pb-3">
+                    <label for="status">Status</label>
+                    <select class="form-control" id="status" name="status" required>
+                        <option disabled selected>Pick A Status</option>
+                        <option value="0">Closed</option>
+                        <option value="1">Open</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4 pb-3">
+                    <label for="priority">Priority</label>
+                    <select class="form-control" id="priority" name="priority" required>
+                        <option disabled selected>Pick A Priority Status</option>
+                        <option value="0">Low</option>
+                        <option value="1">Medium</option>
+                        <option value="2">High</option>
+                        <option value="3">Immediate</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4 pb-3">
+                    <label for="resolution">Resolution</label>
+                    <select class="form-control" id="resolution" name="resolution" required>
+                        <option disabled selected>Pick A Resolution</option>
+                        <option value="0">Actual Software Name</option>
+                    </select>
+                </div>
+
+
+                <div class="col-sm-4 pb-3">
+                    <label for="resolution-version">Resolution Version</label>
+                    <select class="form-control" id="resolution-version" name="resolution-version" required>
+                        <option disabled selected>Select Program Version</option>
+                        <option value="0">1.1</option>
+                        <option value="1">2.0</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4 pb-3">
+                    <label for="resolved-by">Resolved By</label>
+                    <select class="form-control" id="resolved-by" name="resolved-by" required>
+                        <option disabled selected>Choose Employee</option>
+                        <option value="0">Tate</option>
+                        <option value="1">Zack</option>
+                        <option value="2">Eduardo</option>
+                        <option value="3">Dr.Hoffman</option>
+                    </select>
+                </div>
+
+
+                <div class="col-sm-4 pb-3">
+                    <label for="resolved-date">Resolution Date</label>
+                    <input type="text" class="form-control" id="resolved-date" name="resolved-date" placeholder="Resolution Date" required>
+                </div>
+
+                <div class="col-sm-4 pb-3">
+                    <label for="tested-by">Tested By </label>
+                    <select class="form-control" id="tested-by" name="tested-by" required>
+                        <option disabled selected>Pick A Tester</option>
+                        <option value="0">Unresolved</option>
+                        <option value="1">Resolved</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4 pb-3">
+                    <label for="test-date">Test Date</label>
+                    <input type="text" class="form-control" id="test-date" name="test-date" placeholder="Resolution Date" required>
+                </div>
+                <div class="col-sm-4 pb-3">
+                    <label for="deffered">Treat As Deffered</label>
+                    <select class="form-control" id="deffered" name="deffered" required>
+                        <option disabled selected>Select</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-12 pb-3 text-right">
+                    <button type="submit" value="Submit" type="button" class="btn btn-primary btn-lg">
+                        Submit
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.11/combined/js/gijgo.min.js"></script>
+
+
+    <script src="js/main.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+        (function ($) {
+
+
+
+            $('#creation-date').datepicker({
+                uiLibrary: 'bootstrap4',
+                format: 'yyyy-mm-dd',
+                formateSubmit: 'yyyy-mm-dd',
+                size: 'defualt',
+
+            });
+
+            $('#resolved-date').datepicker({
+                uiLibrary: 'bootstrap4',
+                format: 'yyyy-mm-dd',
+                formateSubmit: 'yyyy-mm-dd',
+                size: 'defualt',
+
+            });
+
+            $('#test-date').datepicker({
+                uiLibrary: 'bootstrap4',
+                format: 'yyyy-mm-dd',
+                formateSubmit: 'yyyy-mm-dd',
+                size: 'defualt',
+
+            });
+
+
+            //---------Timer For LSU VS Alabama-----------
+            // Set the date we're counting down to
+            var countDownDate = new Date("Nov 19, 2019 15:37:25").getTime();
+
+            // Update the count down every 1 second
+            var x = setInterval(function () {
+
+                // Get todays date and time
+                var now = new Date().getTime();
+
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Output the result in an element with id="demo"
+                document.getElementById("countdown").innerHTML = days + "d " + hours + "h " +
+                    minutes + "m " + seconds + "s ";
+
+                // If the count down is over, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "LETS GO TIGERS";
+                }
+            }, 1000);
+
+        })(jQuery);
+    </script>
+</body>
+
+</html>

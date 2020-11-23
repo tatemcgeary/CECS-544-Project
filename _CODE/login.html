@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="google" content="notranslate">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        CECS-544 Project
+    </title>
+    <!-- Material Design for Bootstrap fonts and icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <div class="auth">
+        <div class="auth__header">
+            <div class="auth__logo">
+                <img height="200" src="images/lsu-logo.png" alt="csu long beach logo">
+            </div>
+        </div>
+
+        <div class="auth__body">
+            <form class="auth__form" id="form-data" role="form" method="POST" data-type="log-in">
+                <div class="auth__form_body">
+                    <h3 class="auth__form_title">Sign in</h3>
+                    <div>
+                        <div class="form-group">
+                            <label class="text-uppercase small">Email</label>
+                            <input type="email" name="email" class="form-control" placeholder="Enter email" required>
+                            <span id="email-validation" style="color:red; display:none">Invalid Email</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-uppercase small">Password</label>
+                            <input type="password" name="password" class="form-control" placeholder="Password" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group auth__form_actions">
+                    <button type="submit" value="Submit" class="btn btn-primary btn-lg btn-block">
+                        LOGIN
+                    </button>
+                    <div class="mt-2">
+                        <a href="signup.html" class="small text-uppercase">
+                            Sign Up
+                        </a>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+
+
+
+</body>

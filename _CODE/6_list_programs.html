@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google" value="notranslate">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.bootstrap4.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.2/css/responsive.bootstrap4.min.css" />
+
+    <link href=" https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.11/combined/css/gijgo.min.css " rel="stylesheet" type="text/css">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Tiger's Bughound</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p style="color:#FDD023"> Countdown: LSU VS Alabama</p>
+                <p id="countdown" style="color:#FDD023"></p>
+                <li>
+                    <a href="dashboard.html">Create Bug Report</a>
+                </li>
+                <li>
+                    <a href="1_list_search_bug.html">List/Search Bug's/View bug report </a>
+                </li>
+                <li>
+                    <a href="3_add_employee.html">Add Employee</a>
+                </li>
+                <li>
+                    <a href="4_list_edit_employee.html">Edit Employee</a>
+                </li>
+                <li>
+                    <a href="5_add_program.html">Add Program</a>
+                </li>
+                <li>
+                    <a href="6_list_programs.html">Delete Program/list and </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="line"></div>
+
+            <div>
+                <img class="rounded mx-auto d-block" height="200" src="images/lsu_tigers.png" alt="lsu tigers">
+            </div>
+            <div class="line"></div>
+
+
+            <table id="example" class="table table-striped table-bordered display nowrap " style="width:100%">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Program Name</th>
+                        <th>Version</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Program</td>
+                        <td>Report Type</td>
+                        <td>Severity</td>
+                    </tr>
+                    <tr>
+                        <td>Garrett Winters</td>
+                        <td>Program</td>
+                        <td>Report Type</td>
+                        <td>Severity</td>
+                    </tr>
+                    <tr>
+                        <td>Ashton Cox</td>
+                        <td>Program</td>
+                        <td>Report Type</td>
+                        <td>Severity</td>
+                    </tr>
+                    <tr>
+                        <td>Cedric Kelly</td>
+                        <td>Program</td>
+                        <td>Report Type</td>
+                        <td>Severity</td>
+                    </tr>
+                    <tr>
+                        <td>Airi Satou</td>
+                        <td>Program</td>
+                        <td>Report Type</td>
+                        <td>Severity</td>
+                    </tr>
+                    <tr>
+                        <td>Brielle Williamson</td>
+                        <td>Program</td>
+                        <td>Report Type</td>
+                        <td>Severity</td>
+                    </tr>
+                    <tr>
+                        <td>Herrod Chandler</td>
+                        <td>Program</td>
+                        <td>Report Type</td>
+                        <td>Severity</td>
+                    </tr>
+                    <tr>
+                        <td>Rhona Davidson</td>
+                        <td>Program</td>
+                        <td>Report Type</td>
+                        <td>Severity</td>
+                    </tr>
+                    <tr>
+                        <td>Colleen Hurst</td>
+                        <td>Program</td>
+                        <td>Report Type</td>
+                        <td>Severity</td>
+                    </tr>
+                    <tr>
+                        <td>Sonya Frost</td>
+                        <td>Program</td>
+                        <td>Report Type</td>
+                        <td>Severity</td>
+                    </tr>
+                    <tr>
+                        <td>Jena Gaines</td>
+                        <td>Program</td>
+                        <td>Report Type</td>
+                        <td>Severity</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.11/combined/js/gijgo.min.js"></script>
+
+    <!-- Jquery DataTables -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.colVis.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.flash.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.2/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.2/js/responsive.bootstrap4.min.js"></script>
+    <!-- Personal Javascript -->
+    <script src="js/main.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+
+            var table = $('#example').DataTable({
+                lengthChange: false,
+                buttons: ['copy', 'csv', 'excel', 'pdf'],
+
+            });
+            table.buttons().container().appendTo('#example_wrapper .col-md-6:eq(0)')
+
+        });
+
+        (function ($) {
+
+            $('#creation-date').datepicker({
+                uiLibrary: 'bootstrap4',
+                format: 'yyyy-mm-dd',
+                formateSubmit: 'yyyy-mm-dd',
+                size: 'defualt',
+
+            });
+
+            $('#resolved-date').datepicker({
+                uiLibrary: 'bootstrap4',
+                format: 'yyyy-mm-dd',
+                formateSubmit: 'yyyy-mm-dd',
+                size: 'defualt',
+
+            });
+
+            $('#test-date').datepicker({
+                uiLibrary: 'bootstrap4',
+                format: 'yyyy-mm-dd',
+                formateSubmit: 'yyyy-mm-dd',
+                size: 'defualt',
+
+            });
+
+
+            //---------Timer For LSU VS Alabama-----------
+            // Set the date we're counting down to
+            var countDownDate = new Date("Nov 19, 2019 15:37:25").getTime();
+
+            // Update the count down every 1 second
+            var x = setInterval(function () {
+
+                // Get todays date and time
+                var now = new Date().getTime();
+
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Output the result in an element with id="demo"
+                document.getElementById("countdown").innerHTML = days + "d " + hours + "h " +
+                    minutes + "m " + seconds + "s ";
+
+                // If the count down is over, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "LETS GO TIGERS";
+                }
+            }, 1000);
+
+        })(jQuery);
+    </script>
+</body>
+
+</html>

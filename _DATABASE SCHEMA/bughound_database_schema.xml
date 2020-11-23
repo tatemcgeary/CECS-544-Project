@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.8.2
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Generation Time: Feb 06, 2019 at 03:47 AM
+- Server version: 10.1.34-MariaDB
+- PHP Version: 7.2.8
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="bughound" collation="utf8_unicode_ci" charset="utf8">
+            <pma:table name="areas">
+                CREATE TABLE `areas` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `program_id` int(11) NOT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `areas_ibfk_1` (`program_id`),
+                  CONSTRAINT `areas_ibfk_1` FOREIGN KEY (`program_id`) REFERENCES `programs` (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+            </pma:table>
+            <pma:table name="attachments">
+                CREATE TABLE `attachments` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `file_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `file_path` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `bug_id` int(11) NOT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `bug_id` (`bug_id`),
+                  CONSTRAINT `attachments_ibfk_1` FOREIGN KEY (`bug_id`) REFERENCES `bugs` (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+            </pma:table>
+            <pma:table name="bugs">
+                CREATE TABLE `bugs` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `program_id` int(11) NOT NULL,
+                  `report_type` tinyint(4) NOT NULL,
+                  `severity` tinyint(4) NOT NULL,
+                  `reproducible` tinyint(1) NOT NULL,
+                  `problem` text COLLATE utf8_unicode_ci NOT NULL,
+                  `suggested_fix` text COLLATE utf8_unicode_ci,
+                  `reported_by` int(11) NOT NULL,
+                  `reported_date` date NOT NULL,
+                  `assigned_to` int(11) NOT NULL,
+                  `comments` text COLLATE utf8_unicode_ci NOT NULL,
+                  `status` tinyint(4) NOT NULL,
+                  `priority` tinyint(4) NOT NULL,
+                  `resolution` tinyint(4) NOT NULL,
+                  `resolution_version` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+                  `resolved_by` int(11) NOT NULL,
+                  `resolved_date` date NOT NULL,
+                  `tested_by` int(11) NOT NULL,
+                  `tested_date` date NOT NULL,
+                  `deferred` tinyint(1) NOT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `report_type` (`report_type`),
+                  KEY `severity` (`severity`),
+                  KEY `assignedToIdx` (`assigned_to`),
+                  KEY `statusIdx` (`status`),
+                  KEY `priorityIdx` (`priority`),
+                  KEY `resolutionIdx` (`resolution`),
+                  KEY `resolvedByIdx` (`resolved_by`),
+                  KEY `reported_by` (`reported_by`),
+                  KEY `tested_by` (`tested_by`),
+                  KEY `program_id` (`program_id`),
+                  CONSTRAINT `bugs_ibfk_1` FOREIGN KEY (`reported_by`) REFERENCES `employees` (`id`),
+                  CONSTRAINT `bugs_ibfk_2` FOREIGN KEY (`assigned_to`) REFERENCES `employees` (`id`),
+                  CONSTRAINT `bugs_ibfk_3` FOREIGN KEY (`tested_by`) REFERENCES `employees` (`id`),
+                  CONSTRAINT `bugs_ibfk_4` FOREIGN KEY (`program_id`) REFERENCES `programs` (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+            </pma:table>
+            <pma:table name="employees">
+                CREATE TABLE `employees` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `first_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `last_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `nameIdx` (`first_name`,`last_name`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+            </pma:table>
+            <pma:table name="programs">
+                CREATE TABLE `programs` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+                  `version` varchar(6) COLLATE utf8_unicode_ci NOT NULL,
+                  `description` text COLLATE utf8_unicode_ci NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'bughound'
+    -->
+    <database name="bughound">
+        <!-- Table areas -->
+        <!-- Table attachments -->
+        <!-- Table bugs -->
+        <!-- Table employees -->
+        <!-- Table programs -->
+    </database>
+</pma_xml_export>
